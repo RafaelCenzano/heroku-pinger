@@ -25,18 +25,28 @@ def keep_awake(url=config.HOME_URL,testing=False):
 
     if status == 200:
         logger.info('Website ping successful')
-        test_check = True
+        if testing == True:
+            return True
     else:
         logger.warn('Website ping unsuccessful - running tests on local program')
-        test_check = False
+        if testing == True:
+            return False
+        else:
+            return 'test'
 
-    if testing == True:
-        return test_check
+    return 'clear'
+
 # Main
 
 def main():
+
+    # test code
+    test_awake_function()
+
     while True:
-        keep_awake()
+        check = keep_awake()
+        if check == 'test':
+            test_awake_function()
         delay(300)
 
 # Tests
