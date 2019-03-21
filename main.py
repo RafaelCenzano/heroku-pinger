@@ -1,15 +1,16 @@
 # Imports
-import requests
-from configs import config
-import logging
 from time import sleep as delay
+from configs import config
+from logging import Formatter, getLogger, StreamHandler, INFO
+from requests import get as ping
 
-formatter = logging.Formatter(
+
+formatter = Formatter(
     fmt="[%(asctime)s] %(levelname)s [%(name)s.%(funcName)s:%(lineno)d] %(message)s")
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger = getLogger(__name__)
+logger.setLevel(INFO)
 
-console_handler = logging.StreamHandler()
+console_handler = StreamHandler()
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
@@ -17,7 +18,7 @@ logger.addHandler(console_handler)
 
 def keep_awake(url=config.HOME_URL,testing=False):
     try:
-        r = requests.get(url)
+        r = ping(url)
     except Exception as e:
         logger.error(e)
         exit()
