@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo All done
 while true
 do
    python main.py
