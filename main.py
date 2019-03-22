@@ -79,13 +79,19 @@ def test_awake_function():
 
 # Main
 
-def main():
+def main(count=0):
 
     # escape if tests don't work
     test_awake_function()
     restarter()
 
-    main()
+    # Loop main function 5 times
+
+    if current_count == 5:
+        exit()
+
+    current_count = count + 1
+    main(current_count)
 
 if __name__ == '__main__':
     main()
