@@ -87,7 +87,7 @@ def main(count=0):
 
     # Loop main function 5 times
 
-    if current_count == 5:
+    if count == 5:
         exit()
 
     current_count = count + 1
