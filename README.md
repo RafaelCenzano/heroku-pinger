@@ -2,10 +2,6 @@
 
 Simple program that sends GET requests to website to keep it online. Also will add ways to make checks and make sure that your paths are functioning properly.
 
-### Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ## Setup
 
 Clone the repository and enter it
