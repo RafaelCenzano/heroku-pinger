@@ -1,4 +1,4 @@
-# Hearok-Pinger
+# Heroku-Pinger
 
 No more support. Loop wouldn't countinue
 
